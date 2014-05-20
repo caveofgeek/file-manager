@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    body { padding-bottom: 50px; }
+    div.actions ul {
+      list-style: none;
+    }
+    div.actions li { display: inline; }
+
+    div.file-list {
+      max-height: 400px;
+      overflow: auto;
+      clear: both;
+    }
+
+    div.detail {
+      min-height: 400px;
+      background-color: #eee;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h2>File Manager</h2>
+    </header>
+    <div class="row">
+      <div class="col col-md-3">
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  202.44.47.56
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div id="jstree" class="tree" style="height:300px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  202.44.47.66
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div id="jstree" class="tree" style="height:300px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-8">
+        <div class="actions pull-right">
+          <ul>
+            <li><a href="#" class="btn btn-success">Upload File</a></li>
+            <li><a href="#" class="btn btn-default">Edit File</a></li>
+            <li><a href="#" class="btn btn-default">Delete File</a></li>
+          </ul>
+        </div>
+        <div class="console">
+          <div class="file-list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>File name</th>
+                  <th>Date created</th>
+                  <th>size</th>
+                  <th>Kind</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>blah.txt</td>
+                  <td>April 17, 2014 at 10:25 PM</td>
+                  <td>34 KB</td>
+                  <td>Text</td>
+                </tr>
+                <tr>
+                  <td>blah.txt</td>
+                  <td>April 17, 2014 at 10:25 PM</td>
+                  <td>34 KB</td>
+                  <td>Text</td>
+                </tr>
+                <tr>
+                  <td>blah.txt</td>
+                  <td>April 17, 2014 at 10:25 PM</td>
+                  <td>34 KB</td>
+                  <td>Text</td>
+                </tr>
+                <tr>
+                  <td>blah.txt</td>
+                  <td>April 17, 2014 at 10:25 PM</td>
+                  <td>34 KB</td>
+                  <td>Text</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="detail">
+            <div class="container">
+              <h3>File name: Lorem_ipsum.txt</h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /Footer -->
+
+  <!-- JavaScript -->
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery.jstree.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script type="text/javascript" class="source below">
+    $(function() {
+      $(".tree").jstree({
+        "json_data": {
+          "data": [{
+            "data": {
+              "title": "Electronics",
+              "attr": {
+                "href": "#"
+              }
+            },
+            "attr": {
+              "id": "node1"
+            },
+            "children": [{
+              "data": {
+                "title": "Other Electronics",
+                "attr": {
+                  "href": "#"
+                }
+              },
+              "attr": {
+                "rel": "product-category"
+              }
+            }, {
+              "data": {
+                "title": "TV",
+                "attr": {
+                  "href": "#"
+                }
+              },
+              "attr": {
+                "rel": "product-category"
+              }
+            }, {
+              "data": {
+                "title": "DVD Players",
+                "attr": {
+                  "href": "#"
+                }
+              },
+              "attr": {
+                "id": "node2",
+                "class": "jstree-checked",
+                "rel": "product-category-master"
+              },
+              "children": [{
+                "data": {
+                  "title": "Model Name 1",
+                  "attr": {
+                    "href": "#"
+                  }
+                },
+                "attr": {
+                  "rel": "file"
+                }
+              }, {
+                "data": {
+                  "title": "Model Name 2",
+                  "attr": {
+                    "href": "#"
+                  }
+                },
+                "attr": {
+                  "rel": "file"
+                }
+              }, {
+                "data": {
+                  "title": "Model Name 3",
+                  "attr": {
+                    "href": "#"
+                  }
+                },
+                "attr": {
+                  "rel": "file"
+                }
+              }, ]
+            }, {
+              "data": {
+                "title": "GPS",
+                "attr": {
+                  "href": "#"
+                }
+              },
+              "attr": {
+                "rel": "product-category"
+              }
+            }, {
+              "data": {
+                "title": "Home Audio",
+                "attr": {
+                  "href": "#"
+                }
+              },
+              "attr": {
+                "rel": "product-category"
+              }
+            }]
+          }, {
+            "data": {
+              "title": "Software",
+              "attr": {
+                "href": "#"
+              }
+            }
+          }, {
+            "data": {
+              "title": "Mobile",
+              "attr": {
+                "href": "#"
+              }
+            }
+          }, {
+            "data": {
+              "title": "Web Services",
+              "attr": {
+                "href": "#"
+              }
+            }
+          }]
+        },
+        "types": {
+          // I set both options to -2, as I do not need depth and children count checking
+          // Those two checks may slow jstree a lot, so use only when needed
+          "max_depth": -2,
+          "max_children": -2,
+          // I want only `drive` nodes to be root nodes
+          // This will prevent moving or creating any other type as a root node
+          "valid_children": ["folder"],
+          "types": {
+            // The default type
+            "default": {
+              "valid_children": "all",
+              "check_node": false,
+              "uncheck_node": false
+            },
+            "file": {
+              "valid_children": "none",
+            },
+            "product-category": {
+              "valid_children": "file",
+              "check_node": true,
+              "uncheck_node": true
+            },
+            "product-category-master": {
+              "valid_children": "file",
+            }
+          },
+        },
+        "plugins": ["themes", "types", "json_data", "ui", "dnd"],
+        "ui": {
+          "initially_select": ["node3"]
+        },
+        "core": {
+          "initially_open": ["node1", "node2"]
+        },
+        // set a theme
+        "themes": {
+          "theme": "proton",
+        }
+      });
+    });
+  </script>
+</body>
+</html>
